@@ -16,6 +16,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { BreadcrumsComponent } from './shared/breadcrums/breadcrums.component';
 import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 import { PagesComponent } from './pages/pages.component';
+import { RegisterComponent } from './login/register/register.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PagesComponent } from './pages/pages.component';
     HeaderComponent,
     SidebarComponent,
     BreadcrumsComponent,
-    PagesComponent
+    PagesComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
