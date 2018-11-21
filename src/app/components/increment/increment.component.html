@@ -1,9 +1,9 @@
 <h3>{{leyend}}</h3>
 
 <div class="input-group">
-    <input type="number" [(ngModel)]="porcentage" name="porcentage" class="form-control" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-success" (click)="changevalue(+5)" type="button"><i class="fa fa-plus"></i></button>
-      <button class="btn btn-outline-danger" (click)="changevalue(-5)" type="button"><i class="fa fa-minus"></i></button>
-    </div>
+  <input #txtPorcentage type="number" [(ngModel)]="porcentage" name="porcentage" (ngModelChange)="onchange($event)" class="form-control" aria-describedby="basic-addon2" min="0" max="100" >
+  <div class="input-group-append">
+    <button class="btn btn-outline-success" (click)="changevalue(+5)" type="button"><i class="fa fa-plus"></i></button>
+    <button class="btn btn-outline-danger" (click)="changevalue(-5)" type="button"><i class="fa fa-minus"></i></button>
   </div>
+</div>

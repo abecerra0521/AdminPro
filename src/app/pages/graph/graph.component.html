@@ -1,3 +1,10 @@
-<p>
-  graph works!
-</p>
+<div class="row">
+  <div *ngFor="let item of graficos; let i = index" class="col-md-6">
+    <div class="card">
+      <h6 class="card-title">{{item.leyenda}}</h6>
+      <div class="card-body">
+        <app-graph-donut [doughnutChartLabels]="item.labels" [doughnutChartData]="item.data" [doughnutChartType]="item.type" ></app-graph-donut>
+      </div>
+    </div>
+  </div>
+</div>
