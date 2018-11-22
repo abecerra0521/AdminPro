@@ -8,6 +8,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { GraphComponent } from './graph/graph.component';
 import { IncrementComponent } from '../components/increment/increment.component';
 import { GraphDonutComponent } from '../components/graph-donut/graph-donut.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 // ng2-charts
 import { ChartsModule } from 'ng2-charts';
@@ -19,7 +20,6 @@ import { PAGES_ROUTES } from './pages.routes';
 import { SharedModule } from '../shared/shared.module';
 
 
-
 @NgModule({
     declarations: [
         PagesComponent,
@@ -28,6 +28,7 @@ import { SharedModule } from '../shared/shared.module';
         GraphComponent,
         IncrementComponent,
         GraphDonutComponent,
+        AccountSettingsComponent,
     ],
     exports: [
         DashboardComponent,
