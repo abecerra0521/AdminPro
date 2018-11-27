@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// Services
+import { SettingsService } from './services/settings.service';
+
 // Ruotes
 import { APP_ROUTES } from './app.routes';
 
@@ -28,7 +31,7 @@ import { RegisterComponent } from './login/register/register.component';
   ],
   exports: [
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
