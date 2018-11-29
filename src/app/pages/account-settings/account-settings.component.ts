@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { debug } from 'util';
-import { SettingsService } from '../../services/settings.service';
+import { SettingsService } from '../../services/services.index';
+
 
 @Component({
   selector: 'app-account-settings',

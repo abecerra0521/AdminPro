@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // Services
-import { SettingsService } from './services/settings.service';
+import { ServiceModule } from './services/service.module';
 
 // Ruotes
 import { APP_ROUTES } from './app.routes';
@@ -27,11 +27,12 @@ import { RegisterComponent } from './login/register/register.component';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   exports: [
   ],
-  providers: [SettingsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
