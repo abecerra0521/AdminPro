@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 // tslint:disable-next-line:import-blacklist
-import { Observable, Subscriber } from 'rxjs';
-import { retry, map } from 'rxjs/operators';
+import { Observable, Subscriber, Subscription } from 'rxjs';
+import { retry, map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
   styles: []
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent implements OnInit, OnDestroy {
+
+  subscription: Subscription;
 
   constructor() {
 
-    this.observable().subscribe(
+    this.subscription  = this.observable().subscribe(
       num =>  console.log('subscribe', num),
       error => console.error('Error en el observable', error),
       () => console.log('Termino !!')
@@ -21,6 +23,10 @@ export class RxjsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   observable(): Observable<any> {
@@ -36,17 +42,26 @@ export class RxjsComponent implements OnInit {
         };
 
         observer.next( salida );
-        if (cont === 3) {
-          clearInterval(interval);
-          observer.complete();
-        }
+
+        // if (cont === 3) {
+        //   clearInterval(interval);
+        //   observer.complete();
+        // }
         // if (cont === 2) {
           // clearInterval(interval);
           // observer.error('help');
         // }
+
       }, 1000);
     }).pipe(
-      map( response => response.valor)
+      map( response => response.valor),
+      filter((valor, index) => {
+        if ((valor % 2 ) === 1) {
+          return true;
+        } else {
+          return false;
+        }
+      })
     );
   }
 
